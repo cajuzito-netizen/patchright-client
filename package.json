@@ -8,18 +8,10 @@
   "scripts": {
     "build": "tsc"
   },
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "patchright",
-    "playwright",
-    "browser",
-    "automation",
-    "stealth"
-  ],
+  "files": ["dist"],
+  "keywords": ["patchright", "playwright", "browser", "automation", "stealth"],
   "license": "MIT",
-  "dependencies": {
-    "typescript": "^7.0.2"
+  "devDependencies": {
+    "typescript": "^5.3.3"
   }
 }
