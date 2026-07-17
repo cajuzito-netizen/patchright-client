@@ -124,9 +124,8 @@ export class Page {
    * Get page HTML content
    */
   async content(): Promise<string> {
-    const result = await this.client.post<{ html: string }>(
-      `/browsers/${this.browserId}/pages/${this.pageId}/content`,
-      {}
+    const result = await this.client.get<{ html: string }>(
+      `/browsers/${this.browserId}/pages/${this.pageId}/content`
     );
     return result.html;
   }
