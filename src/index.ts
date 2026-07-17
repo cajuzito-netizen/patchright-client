@@ -155,9 +155,8 @@ export class Browser {
    * Get all cookies
    */
   async cookies(): Promise<Cookie[]> {
-    const result = await this.client.post<{ cookies: Cookie[] }>(
-      `/browsers/${this.id}/cookies`,
-      {}
+    const result = await this.client.get<{ cookies: Cookie[] }>(
+      `/browsers/${this.id}/cookies`
     );
     return result.cookies;
   }
