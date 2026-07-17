@@ -225,6 +225,20 @@ export class PatchrightClient {
   }
 
   /**
+   * Get browser by profile name (without creating new)
+   */
+  async getBrowserByProfile(profileName: string): Promise<Browser | null> {
+    try {
+      const result = await this.get<{ id: string }>(
+        `/browsers/profile/${encodeURIComponent(profileName)}`
+      );
+      return new Browser(this, result.id, profileName);
+    } catch {
+      return null;
+    }
+  }
+
+  /**
    * List all active browsers
    */
   async listBrowsers(): Promise<BrowserInfo[]> {
